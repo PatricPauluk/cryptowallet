@@ -3,3 +3,15 @@
 <%# Testando ERB, para codificar com Ruby em HTML. %>
 <% name = "Patric" %>
 <p>Meu nome é <%= name %> e seja bem vindo ao Cryptowallet.</p>
+
+<ul>
+    <li>
+        <%# O código abaixo é o mesmo que:
+        <a href="/coins">Cadastro de Moedas </a>
+        Em Rails é sempre recomendado usar código Ruby ao invés de HTML. 
+        
+        A roda coins_path (o mesmo que /coins) foi pega na url:
+        http://localhost:3000/rails/info/routes %>
+        <%= link_to "Cadastro de Moedas", coins_path %>
+    </li>
+</ul>
