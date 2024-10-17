@@ -3,6 +3,8 @@
 <%# Testando ERB, para codificar com Ruby em HTML. %>
 <% name = "Patric" %>
 <p>Meu nome é <%= name %> e seja bem vindo ao Cryptowallet.</p>
+<%# O helper criado abaixo é o mesmo que => Date.today.strftime("%d/%m/%Y") %>
+<p>Dia de hoje: <%= data_br(Date.today) %></p>
 
 <ul>
     <li>
