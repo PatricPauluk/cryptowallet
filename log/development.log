@@ -471,3 +471,45 @@ Processing by WelcomeController#index as HTML
 Completed 200 OK in 14ms (Views: 13.7ms | ActiveRecord: 0.0ms)
 
 
+  [1m[36mCoin Load (0.9ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCoin Load (1.1ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" ORDER BY "coins"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCoin Load (1.3ms)[0m  [1m[34mSELECT "coins".* FROM "coins"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCoin Create (2.7ms)[0m  [1m[32mINSERT INTO "coins" ("description", "acronym", "url_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["description", "Ethereum"], ["acronym", "ETH"], ["url_image", "https://upload.wikimedia.org/wikipedia/commons/0/01/Ethereum_logo_translucent.svg"], ["created_at", "2024-10-18 00:04:27.334318"], ["updated_at", "2024-10-18 00:04:27.334318"]]
+  [1m[35m (11.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCoin Load (0.2ms)[0m  [1m[34mSELECT "coins".* FROM "coins"[0m
+Started GET "/inicio" for ::1 at 2024-10-17 21:04:40 -0300
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 70ms (Views: 66.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/coins" for ::1 at 2024-10-17 21:04:41 -0300
+Processing by CoinsController#index as HTML
+  Rendering coins/index.html.erb within layouts/application
+  [1m[36mCoin Load (0.1ms)[0m  [1m[34mSELECT "coins".* FROM "coins"[0m
+  ↳ app/views/coins/index.html.erb:16
+  Rendered coins/index.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 23ms (Views: 20.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/coins/2" for ::1 at 2024-10-17 21:04:46 -0300
+Processing by CoinsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCoin Load (0.5ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/coins_controller.rb:63
+  Rendering coins/show.html.erb within layouts/application
+  Rendered coins/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 60ms (Views: 49.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/coins" for ::1 at 2024-10-17 21:04:48 -0300
+Processing by CoinsController#index as HTML
+  Rendering coins/index.html.erb within layouts/application
+  [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT "coins".* FROM "coins"[0m
+  ↳ app/views/coins/index.html.erb:16
+  Rendered coins/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 58ms (Views: 55.9ms | ActiveRecord: 0.3ms)
+
+
