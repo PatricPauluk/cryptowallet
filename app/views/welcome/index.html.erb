@@ -1,18 +1,20 @@
 <h1>Seja bem vindo!</h1>
 
 <%# Meu nome esta sendo chamado de uma variável de instância direto do controller. %>
-<p>Meu nome é <%= @name %> e seja bem vindo ao Cryptowallet.</p>
+<p>Meu nome é <%= @nome %> e seja bem vindo ao Cryptowallet.</p>
 <%# O helper criado abaixo é o mesmo que => Date.today.strftime("%d/%m/%Y") %>
 <p>Dia de hoje: <%= data_br(Date.today) %></p>
 
 <ul>
     <li>
-        <%# O código abaixo é o mesmo que:
+        <%#
+        O código abaixo é o mesmo que:
         <a href="/coins">Cadastro de Moedas </a>
         Em Rails é sempre recomendado usar código Ruby ao invés de HTML. 
         
         A rota coins_path (o mesmo que /coins) foi pega na url:
-        http://localhost:3000/rails/info/routes %>
+        http://localhost:3000/rails/info/routes
+        %>
         <%= link_to "Cadastro de Moedas", coins_path %>
     </li>
 </ul>
@@ -20,3 +22,10 @@
 <p>
     Ambiente atual: <strong><%= ambiente_rails %>.</strong>
 </p>
+
+<%#
+Exemplo: http://localhost:3000/?parametro=Ol%C3%A1%20mundo! 
+Para 2 parâmetros: http://localhost:3000/?parametro=Ol%C3%A1%20mundo!&teste=ok
+%>
+
+<p>Exemplo de parâmetro capturado: <%= @parametro %></p>
