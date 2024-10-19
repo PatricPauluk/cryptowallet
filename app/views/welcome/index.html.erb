@@ -5,19 +5,12 @@
 <%# O helper criado abaixo é o mesmo que => Date.today.strftime("%d/%m/%Y") %>
 <p>Dia de hoje: <%= data_br(Date.today) %></p>
 
-<ul>
-    <li>
-        <%#
-        O código abaixo é o mesmo que:
-        <a href="/coins">Cadastro de Moedas </a>
-        Em Rails é sempre recomendado usar código Ruby ao invés de HTML. 
-        
-        A rota coins_path (o mesmo que /coins) foi pega na url:
-        http://localhost:3000/rails/info/routes
-        %>
-        <%= link_to "Cadastro de Moedas", coins_path %>
-    </li>
-</ul>
+<%#
+Partials começam com _
+Renderiza o menu de outro documento, o valor entre áspas encontra o arquivo:
+_menu.html.erb
+%>
+<%= render "menu" %>
 
 <p>
     Ambiente atual: <strong><%= ambiente_rails %>.</strong>

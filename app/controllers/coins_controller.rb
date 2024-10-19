@@ -1,4 +1,8 @@
 class CoinsController < ApplicationController
+
+  # O layout de exemplo é acessado dessa forma abaixo.
+  # layout "layoutexemplo"
+
   before_action :set_coin, only: %i[ show edit update destroy ]
 
   # GET /coins or /coins.json
