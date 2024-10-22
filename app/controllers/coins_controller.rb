@@ -3,6 +3,7 @@ class CoinsController < ApplicationController
   # O layout de exemplo é acessado dessa forma abaixo.
   # layout "layoutexemplo"
 
+  # Executa a function set_coin antes de executar as funções show, edit, update e destroy.
   before_action :set_coin, only: %i[ show edit update destroy ]
 
   # GET /coins or /coins.json
@@ -63,10 +64,12 @@ class CoinsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    # Seleciona a moeda correspondente antes de executar a ação do CRUD
     def set_coin
       @coin = Coin.find(params[:id])
     end
 
+    # Verifica se os parâmetros a serem enviados estão corretos e não foram adulterados no navegador.
     # Only allow a list of trusted parameters through.
     def coin_params
       params.require(:coin).permit(:description, :acronym, :url_image)
