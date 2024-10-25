@@ -37,6 +37,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'pry-rails' # Exibe os dados do rails console de forma mais legível
+gem "tty-spinner" # Adiciona um spinner quando tiver carregando algo no terminal
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
