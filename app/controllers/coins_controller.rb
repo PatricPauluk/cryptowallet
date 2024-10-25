@@ -62,6 +62,7 @@ class CoinsController < ApplicationController
     end
   end
 
+  # Métodos privados só o próprio controller tem acesso.
   private
     # Use callbacks to share common setup or constraints between actions.
     # Seleciona a moeda correspondente antes de executar a ação do CRUD
