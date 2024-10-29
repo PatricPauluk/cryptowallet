@@ -25,7 +25,7 @@ namespace :dev do
   end
 end
 
-# # Efeito spinner no terminal
+# # Efeito spinner no terminal (base, substituido pelo código acima)
 # spinner = TTY::Spinner.new("[:spinner] Excluindo e re-criando bancos de dados ...", format: :pulse_2)
 # spinner.auto_spin # Automatic animation with default interval
 # sleep(2) # Perform task
