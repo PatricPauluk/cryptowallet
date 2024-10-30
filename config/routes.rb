@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :mining_types
   get 'welcome/index'
 
   get '/inicio', to: 'welcome#index' # Acessa o welcome/index também em => http://localhost:3000/inicio

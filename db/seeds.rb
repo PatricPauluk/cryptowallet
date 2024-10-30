@@ -1,3 +1,7 @@
+# -------------------------------------------------------------------------
+# | !!!!! AS SEEDS AGORA ESTÃO CONFIGURADAS EM: lib/tasks/dev.rave !!!!!  |
+# -------------------------------------------------------------------------
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -12,9 +16,6 @@
 # | Executado com: rails db:seed                            |
 # -----------------------------------------------------------
 
-
-# spinner = TTY::Spinner.new("[:spinner] Criando moedas ...", format: :pulse_2)
-# spinner.auto_spin # Automatic animation with default interval
 
 # # Criado forma antiga
 # Coin.create!(
@@ -47,28 +48,28 @@
 
 # Quando a criação é declarada como Coin.find_or_create_by!, ele cria a moeda, mas sem duplicidades.
 # É necessário criar um array de hashes a parte e colocar em um coins.each para funcionar.
-coins = [
-  {
-    description: "Bitcoin",
-    acronym: "BTC",
-    url_image: "https://static.mercadobitcoin.com.br/web/img/icons/assets/ico-asset-btc-color.svg"
-  },
-  {
-    description: "Ethereum",
-    acronym: "ETH",
-    url_image: "https://static.mercadobitcoin.com.br/web/img/icons/assets/ico-asset-eth-color.svg"
-  },
-  {
-    description: "Pendle",
-    acronym: "PENDLE",
-    url_image: "https://static.mercadobitcoin.com.br/web/img/icons/assets/ico-asset-pendle-color.svg"
-  }
-]
+# coins = [
+#   {
+#     description: "Bitcoin",
+#     acronym: "BTC",
+#     url_image: "https://static.mercadobitcoin.com.br/web/img/icons/assets/ico-asset-btc-color.svg"
+#   },
+#   {
+#     description: "Ethereum",
+#     acronym: "ETH",
+#     url_image: "https://static.mercadobitcoin.com.br/web/img/icons/assets/ico-asset-eth-color.svg"
+#   },
+#   {
+#     description: "Pendle",
+#     acronym: "PENDLE",
+#     url_image: "https://static.mercadobitcoin.com.br/web/img/icons/assets/ico-asset-pendle-color.svg"
+#   }
+# ]
 
-coins.each do |coin|
-  sleep(1) # Perform task
-  Coin.find_or_create_by!(coin)
-end
+# coins.each do |coin|
+#   sleep(1) # Perform task
+#   Coin.find_or_create_by!(coin) # Cria a moeda sem repetição
+# end
 
-# spinner.success("Feito!") # Stop animation
-puts "Moedas criadas sem repetições."
+# # spinner.success("Feito!") # Stop animation
+# puts "Moedas criadas sem repetições."
