@@ -4025,3 +4025,48 @@ Migrating to AddMiningTypeToCoins (20241031220721)
   [1m[36mCoin Load (0.2ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" ORDER BY "coins"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
   [1m[36mMiningType Load (0.3ms)[0m  [1m[34mSELECT  "mining_types".* FROM "mining_types" ORDER BY "mining_types"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" ORDER BY "coins"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMiningType Load (0.2ms)[0m  [1m[34mSELECT  "mining_types".* FROM "mining_types" ORDER BY "mining_types"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCoin Load (0.8ms)[0m  [1m[34mSELECT "coins".* FROM "coins" WHERE "coins"."mining_type_id" = ?[0m  [["mining_type_id", 1]]
+  [1m[36mCoin Load (0.1ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" ORDER BY "coins"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCoin Update (1.9ms)[0m  [1m[33mUPDATE "coins" SET "updated_at" = ?, "mining_type_id" = ? WHERE "coins"."id" = ?[0m  [["updated_at", "2024-11-01 01:46:33.088237"], ["mining_type_id", 1], ["id", 1]]
+  [1m[35m (8.4ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/mining_types" for 127.0.0.1 at 2024-10-31 22:46:55 -0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/patric/.asdf/installs/ruby/2.7.8/lib/ruby/gems/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+Processing by MiningTypesController#index as HTML
+  Rendering mining_types/index.html.erb within layouts/application
+  [1m[36mMiningType Load (0.2ms)[0m  [1m[34mSELECT "mining_types".* FROM "mining_types"[0m
+  ↳ app/views/mining_types/index.html.erb:15
+  Rendered mining_types/index.html.erb within layouts/application (17.8ms)
+Completed 200 OK in 110ms (Views: 67.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/coins" for 127.0.0.1 at 2024-10-31 22:46:58 -0300
+Processing by CoinsController#index as HTML
+  Rendering coins/index.html.erb within layouts/application
+  [1m[36mCoin Load (0.7ms)[0m  [1m[34mSELECT "coins".* FROM "coins"[0m
+  ↳ app/views/coins/index.html.erb:17
+  Rendered coins/index.html.erb within layouts/application (81.8ms)
+Completed 200 OK in 117ms (Views: 34.9ms | ActiveRecord: 67.7ms)
+
+
+Started GET "/coins" for 127.0.0.1 at 2024-10-31 22:46:59 -0300
+Processing by CoinsController#index as HTML
+  Rendering coins/index.html.erb within layouts/application
+  [1m[36mCoin Load (0.2ms)[0m  [1m[34mSELECT "coins".* FROM "coins"[0m
+  ↳ app/views/coins/index.html.erb:17
+  Rendered coins/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 24ms (Views: 22.7ms | ActiveRecord: 0.2ms)
+
+
+  [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" ORDER BY "coins"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" ORDER BY "coins"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMiningType Load (0.4ms)[0m  [1m[34mSELECT  "mining_types".* FROM "mining_types" ORDER BY "mining_types"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCoin Load (0.7ms)[0m  [1m[34mSELECT "coins".* FROM "coins" WHERE "coins"."mining_type_id" = ?[0m  [["mining_type_id", 1]]
+  [1m[36mCoin Load (0.6ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" ORDER BY "coins"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCoin Update (1.2ms)[0m  [1m[33mUPDATE "coins" SET "updated_at" = ?, "mining_type_id" = ? WHERE "coins"."id" = ?[0m  [["updated_at", "2024-11-01 01:54:20.398446"], ["mining_type_id", 1], ["id", 2]]
+  [1m[35m (13.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
