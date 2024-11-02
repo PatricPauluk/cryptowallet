@@ -9,8 +9,8 @@ namespace :dev do
       show_spinner("Apagando Banco de Dados...")                          { %x(rails db:drop) }
       show_spinner("Criando Banco de Dados...")                           { %x(rails db:create) } 
       show_spinner("Migrando Tabelas...")                                 { %x(rails db:migrate) }
-      show_spinner("Alimentando Banco de Dados (Moedas)...")              { %x(rails dev:add_coins) }
       show_spinner("Alimentando Banco de Dados (Tipos de Mineração)...")  { %x(rails dev:add_mining_types) }
+      show_spinner("Alimentando Banco de Dados (Moedas)...")              { %x(rails dev:add_coins) }
     else
       puts "Você não esta em ambiente de desenvolvimento."
     end
@@ -25,22 +25,24 @@ namespace :dev do
       {
         description:  "Bitcoin",
         acronym:      "BTC",
-        url_image:    "https://static.mercadobitcoin.com.br/web/img/icons/assets/ico-asset-btc-color.svg"
+        url_image:    "https://static.mercadobitcoin.com.br/web/img/icons/assets/ico-asset-btc-color.svg",
+        mining_type: MiningType.find_by(acronym: 'PoW') # find_by: Procura no banco o acronym que corresponde com Pow)
       },
       {
         description:  "Ethereum",
         acronym:      "ETH",
-        url_image:    "https://static.mercadobitcoin.com.br/web/img/icons/assets/ico-asset-eth-color.svg"
+        url_image:    "https://static.mercadobitcoin.com.br/web/img/icons/assets/ico-asset-eth-color.svg",
+        mining_type: MiningType.all.sample # all.sample: Busca um valor aleatório
       },
       {
         description:  "Pendle",
         acronym:      "PENDLE",
-        url_image:    "https://static.mercadobitcoin.com.br/web/img/icons/assets/ico-asset-pendle-color.svg"
+        url_image:    "https://static.mercadobitcoin.com.br/web/img/icons/assets/ico-asset-pendle-color.svg",
+        mining_type: MiningType.all.sample
       }
     ]
 
     coins.each do |coin| # Percorre o array de hashes e cadastra no banco de um a um
-      sleep(1) # Perform task
       Coin.find_or_create_by!(coin) # Se tiver duvidas de como escreve a variável, verifique nos models
     end
 
@@ -59,7 +61,6 @@ namespace :dev do
     ]
 
     mining_types.each do |mining_type|
-      sleep(1)
       MiningType.find_or_create_by!(mining_type) # Se tiver duvidas de como escreve a variável, verifique nos models
     end
   end
