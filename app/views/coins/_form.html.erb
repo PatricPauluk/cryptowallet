@@ -29,6 +29,13 @@
     <%= form.text_field :url_image %>
   </div>
 
+  <div class="field">
+    <%= form.label :mining_type_id %>
+    <%# Coleta todos os MiningType cadastrados e exibe em um combobox %>
+    <%# Caso no terminal apareça: Unpermitted parameter: :mining_type_id , Verifique os controllers de coins %>
+    <%= form.select("mining_type_id", MiningType.all.collect { |m| [ m.description, m.id ] }, { include_blank: 'Selecione...' }) %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
