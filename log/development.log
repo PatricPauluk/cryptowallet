@@ -4903,3 +4903,118 @@ Processing by CoinsController#edit as HTML
 Completed 200 OK in 15ms (Views: 13.5ms | ActiveRecord: 0.1ms)
 
 
+Started GET "/" for 127.0.0.1 at 2024-11-05 22:13:02 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/patric/.asdf/installs/ruby/2.7.8/lib/ruby/gems/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/_menu.html.erb (0.5ms)
+  Rendered welcome/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 135ms (Views: 132.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mining_types" for 127.0.0.1 at 2024-11-05 22:13:05 -0300
+Processing by MiningTypesController#index as HTML
+  Rendering mining_types/index.html.erb within layouts/application
+  [1m[36mMiningType Load (0.4ms)[0m  [1m[34mSELECT "mining_types".* FROM "mining_types"[0m
+  ↳ app/views/mining_types/index.html.erb:15
+  Rendered mining_types/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 21ms (Views: 16.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/mining_types" for 127.0.0.1 at 2024-11-05 22:13:13 -0300
+Processing by MiningTypesController#index as HTML
+  Rendering mining_types/index.html.erb within layouts/application
+  [1m[36mMiningType Load (0.1ms)[0m  [1m[34mSELECT "mining_types".* FROM "mining_types"[0m
+  ↳ app/views/mining_types/index.html.erb:15
+  Rendered mining_types/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/mining_types/3/edit" for 127.0.0.1 at 2024-11-05 22:13:16 -0300
+Processing by MiningTypesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMiningType Load (0.1ms)[0m  [1m[34mSELECT  "mining_types".* FROM "mining_types" WHERE "mining_types"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/mining_types_controller.rb:63
+  Rendering mining_types/edit.html.erb within layouts/application
+  Rendered mining_types/_form.html.erb (6.3ms)
+  Rendered mining_types/edit.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 26ms (Views: 24.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/mining_types" for 127.0.0.1 at 2024-11-05 22:13:18 -0300
+Processing by MiningTypesController#index as HTML
+  Rendering mining_types/index.html.erb within layouts/application
+  [1m[36mMiningType Load (0.1ms)[0m  [1m[34mSELECT "mining_types".* FROM "mining_types"[0m
+  ↳ app/views/mining_types/index.html.erb:15
+  Rendered mining_types/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2024-11-05 22:13:22 -0300
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/_menu.html.erb (0.3ms)
+  Rendered welcome/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 13ms (Views: 12.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/coins" for 127.0.0.1 at 2024-11-05 22:13:23 -0300
+Processing by CoinsController#index as HTML
+  Rendering coins/index.html.erb within layouts/application
+  [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT "coins".* FROM "coins"[0m
+  ↳ app/views/coins/index.html.erb:17
+  Rendered coins/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 18ms (Views: 14.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/coins/2/edit" for 127.0.0.1 at 2024-11-05 22:13:24 -0300
+Processing by CoinsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCoin Load (0.1ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/coins_controller.rb:70
+  Rendering coins/edit.html.erb within layouts/application
+  Rendered coins/_form.html.erb (0.5ms)
+  Rendered coins/edit.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms)
+
+
+  
+SyntaxError (/home/patric/cryptowallet/app/views/coins/_form.html.erb:36: syntax error, unexpected ',', expecting '}'
+...gType.all.pluck { :description, :id }, { include_blank: 'Sel...
+...                              ^
+/home/patric/cryptowallet/app/views/coins/_form.html.erb:36: syntax error, unexpected ')', expecting `end'
+...lude_blank: 'Selecione...' }) );@output_buffer.safe_append='
+...                              ^
+/home/patric/cryptowallet/app/views/coins/_form.html.erb:45: syntax error, unexpected `ensure', expecting end-of-input
+          ensure
+          ^~~~~~
+):
+  
+app/views/coins/_form.html.erb:36: syntax error, unexpected ',', expecting '}'
+app/views/coins/_form.html.erb:36: syntax error, unexpected ')', expecting `end'
+app/views/coins/_form.html.erb:45: syntax error, unexpected `ensure', expecting end-of-input
+app/views/coins/edit.html.erb:4:in `_app_views_coins_edit_html_erb___1562048774986541794_15360'
+Started GET "/coins/2/edit" for 127.0.0.1 at 2024-11-05 22:13:49 -0300
+Processing by CoinsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCoin Load (0.1ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/coins_controller.rb:70
+  Rendering coins/edit.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "mining_types"."description", "mining_types"."id" FROM "mining_types"[0m
+  ↳ app/views/coins/_form.html.erb:36
+  Rendered coins/_form.html.erb (8.3ms)
+  Rendered coins/edit.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 21ms (Views: 19.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2024-11-26 11:16:17 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/patric/.asdf/installs/ruby/2.7.8/lib/ruby/gems/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/_menu.html.erb (0.5ms)
+  Rendered welcome/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 125ms (Views: 121.3ms | ActiveRecord: 0.0ms)
+
+

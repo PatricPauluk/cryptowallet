@@ -73,6 +73,6 @@ class CoinsController < ApplicationController
     # Verifica se os parâmetros a serem enviados estão corretos e não foram adulterados no navegador.
     # Only allow a list of trusted parameters through.
     def coin_params
-      params.require(:coin).permit(:description, :acronym, :url_image, :mining_type_id)
+      params.require(:coin).permit(:description, :acronym, :url_image, :mining_type_id) # mining_type_id adicionado manualmente
     end
 end
