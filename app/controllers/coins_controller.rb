@@ -3,8 +3,9 @@ class CoinsController < ApplicationController
   # O layout de exemplo é acessado dessa forma abaixo.
   # layout "layoutexemplo"
 
-  # Executa a function set_coin antes de executar as funções show, edit, update e destroy.
+  # Executa a function set_coin e set_mining_type_options antes de executar as funções especificadas.
   before_action :set_coin, only: %i[ show edit update destroy ]
+  before_action :set_mining_type_options, only: %i[ new create edit update ]
 
   # GET /coins or /coins.json
   def index
@@ -64,6 +65,9 @@ class CoinsController < ApplicationController
 
   # Métodos privados só o próprio controller tem acesso.
   private
+    def set_mining_type_options
+      @mining_type_options = MiningType.all.pluck(:description, :id) # Acessa o model e armazena os dados em uma variável de sessão, invocada em before_action
+    end
     # Use callbacks to share common setup or constraints between actions.
     # Seleciona a moeda correspondente antes de executar a ação do CRUD
     def set_coin
