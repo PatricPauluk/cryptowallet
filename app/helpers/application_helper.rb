@@ -5,7 +5,7 @@ module ApplicationHelper
   end
 
   # Helper para exibir o local conforme especificado em I18.locale
-  def locale(locale)
+  def locale
     I18n.locale == :en ? "Estados Unidos" : "Português do Brasil"
     # if I18n.locale == :en
     #   "Estados Unidos"

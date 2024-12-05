@@ -1,12 +1,19 @@
 <h1>Seja bem vindo!</h1>
 
-<p>Configurado o I18n. O idioma usado nesta aplicação é: <strong><%= locale(I18n.locale) %><strong></p>
+<%# locale é um helper %>
+<p>Configurado o I18n. O idioma usado nesta aplicação é: <strong><%= locale %></strong></p>
+<p> O método para buscar tradução é <strong>I18n.t()</strong>, as chaves ficam em config/locales.<br>
+    O método para localização (como data e hora) é <strong>I18n.l()</strong>.<br><br>
+    Testes I18n.t(): <%= t('hello') %> </p>
+<%# O método pode ser chamado dessa forma ao invés de: I18n.t('hello') %>
 
 <%# Meu nome esta sendo chamado de uma variável de instância direto do controller. %>
 <p>Meu nome é <%= @nome %> e seja bem vindo ao Cryptowallet.</p>
 <%# O helper criado abaixo é o mesmo que => Date.today.strftime("%d/%m/%Y") %>
 <%# data_br(Date.today) %>
-<p>Dia de hoje: <%= Date.today %></p>
+<%# Após configurar o I18n na aplicação não vamos mais utilizar este helper. %>
+<p>Dia de hoje: <%= l(Date.today) %></p>
+<%# l(Date.today) é o mesmo que I18n.l(Date.today) %>
 
 <%#
 Partials começam com _
