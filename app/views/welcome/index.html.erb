@@ -1,9 +1,12 @@
 <h1>Seja bem vindo!</h1>
 
+<p>Configurado o I18n. O idioma usado nesta aplicação é: <strong><%= locale(I18n.locale) %><strong></p>
+
 <%# Meu nome esta sendo chamado de uma variável de instância direto do controller. %>
 <p>Meu nome é <%= @nome %> e seja bem vindo ao Cryptowallet.</p>
 <%# O helper criado abaixo é o mesmo que => Date.today.strftime("%d/%m/%Y") %>
-<p>Dia de hoje: <%= data_br(Date.today) %></p>
+<%# data_br(Date.today) %>
+<p>Dia de hoje: <%= Date.today %></p>
 
 <%#
 Partials começam com _
