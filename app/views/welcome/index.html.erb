@@ -1,7 +1,7 @@
 <h1>Seja bem vindo!</h1>
 
 <%# locale é um helper %>
-<p>Configurado o I18n. O idioma usado nesta aplicação é: <strong><%= locale %></strong></p>
+<p>Configurado o I18n. O idioma usado nesta aplicação é: <strong><%= t('actual_locale') %></strong></p>
 <p> O método para buscar tradução é <strong>I18n.t()</strong>, as chaves ficam em config/locales.<br>
     O método para localização (como data e hora) é <strong>I18n.l()</strong>.<br><br>
     Testes I18n.t(): <%= t('hello') %> </p>

@@ -1,6 +1,9 @@
-pt-BR:
+"pt-BR":
+  actual_locale: "Português do Brasil"
   hello: "Olá mundo!"
   links:
     edit: "Editar"
     show: "Mostrar"
     destroy: "Apagar"
+
+# Como pode ver em outro arquivos em locales, as chaves podem ou não ter áspas

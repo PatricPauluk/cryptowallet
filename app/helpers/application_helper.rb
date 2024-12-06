@@ -5,14 +5,14 @@ module ApplicationHelper
   end
 
   # Helper para exibir o local conforme especificado em I18.locale
-  def locale
-    I18n.locale == :en ? "Estados Unidos" : "Português do Brasil"
+  # def locale
+    # I18n.locale == :en ? "Estados Unidos" : "Português do Brasil"
     # if I18n.locale == :en
     #   "Estados Unidos"
     # else
     #   "Português do Brasil"
     # end
-  end
+  # end
 
   # Traduz o ambiente de desenvolviento atual de inglês para português brasileiro
   def ambiente_rails
