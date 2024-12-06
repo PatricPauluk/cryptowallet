@@ -5828,3 +5828,268 @@ Processing by WelcomeController#index as HTML
 Completed 200 OK in 78ms (Views: 45.6ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/rails/info/routes" for ::1 at 2024-12-05 23:42:19 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/patric/.asdf/installs/ruby/2.7.8/lib/ruby/gems/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+Processing by Rails::InfoController#routes as HTML
+  Rendering /home/patric/.asdf/installs/ruby/2.7.8/lib/ruby/gems/2.7.0/gems/railties-5.2.8.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /home/patric/.asdf/installs/ruby/2.7.8/lib/ruby/gems/2.7.0/gems/actionpack-5.2.8.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [24 times] (5.7ms)
+  Rendered /home/patric/.asdf/installs/ruby/2.7.8/lib/ruby/gems/2.7.0/gems/actionpack-5.2.8.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.1ms)
+  Rendered /home/patric/.asdf/installs/ruby/2.7.8/lib/ruby/gems/2.7.0/gems/railties-5.2.8.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 23ms (Views: 17.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2024-12-05 23:42:22 -0300
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/_menu.html.erb (0.6ms)
+  Rendered welcome/index.html.erb within layouts/application (85.1ms)
+Completed 200 OK in 202ms (Views: 201.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/coins" for ::1 at 2024-12-05 23:53:41 -0300
+Processing by CoinsController#index as HTML
+  Rendering coins/index.html.erb within layouts/application
+  [1m[36mCoin Load (0.6ms)[0m  [1m[34mSELECT "coins".* FROM "coins"[0m
+  ↳ app/views/coins/index.html.erb:17
+  Rendered coins/index.html.erb within layouts/application (96.0ms)
+Completed 200 OK in 123ms (Views: 108.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/coins/1/edit" for ::1 at 2024-12-05 23:53:43 -0300
+Processing by CoinsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCoin Load (0.1ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/coins_controller.rb:74
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "mining_types"."description", "mining_types"."id" FROM "mining_types"[0m
+  ↳ app/controllers/coins_controller.rb:69
+  Rendering coins/edit.html.erb within layouts/application
+  Rendered coins/_form.html.erb (5.2ms)
+  Rendered coins/edit.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 29ms (Views: 18.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/coins/1/edit" for ::1 at 2024-12-05 23:53:53 -0300
+Processing by CoinsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCoin Load (0.1ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/coins_controller.rb:74
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "mining_types"."description", "mining_types"."id" FROM "mining_types"[0m
+  ↳ app/controllers/coins_controller.rb:69
+  Rendering coins/edit.html.erb within layouts/application
+  Rendered coins/_form.html.erb (24.2ms)
+  Rendered coins/edit.html.erb within layouts/application (25.0ms)
+Completed 200 OK in 47ms (Views: 37.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/coins" for ::1 at 2024-12-06 00:00:09 -0300
+Processing by CoinsController#index as HTML
+  Rendering coins/index.html.erb within layouts/application
+  [1m[36mCoin Load (0.2ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/patric/.asdf/installs/ruby/2.7.8/lib/ruby/gems/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/patric/.asdf/installs/ruby/2.7.8/lib/ruby/gems/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/patric/.asdf/installs/ruby/2.7.8/lib/ruby/gems/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/patric/.asdf/installs/ruby/2.7.8/lib/ruby/gems/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/patric/.asdf/installs/ruby/2.7.8/lib/ruby/gems/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/patric/.asdf/installs/ruby/2.7.8/lib/ruby/gems/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/patric/.asdf/installs/ruby/2.7.8/lib/ruby/gems/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/patric/.asdf/installs/ruby/2.7.8/lib/ruby/gems/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendered coins/index.html.erb within layouts/application (135.2ms)
+Completed 500 Internal Server Error in 138ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `description' for #<#<Class:0x00007ff944310c50>:0x00007ff94430b2a0>):
+     6:   <thead>
+     7:     <tr>
+     8:       <%# As traduções são buscadas em config/locales/pt-BR_models.yml %>
+     9:       <th><%= Coin.human_attribute_nale(description) %></th>
+    10:       <th><%= Coin.human_attribute_nale(acronym) %></th>
+    11:       <th><%= Coin.human_attribute_nale(url_image) %></th>
+    12:       <th colspan="3"></th>
+  
+app/views/coins/index.html.erb:9:in `_app_views_coins_index_html_erb__3924157086602074200_25600'
+Started GET "/coins" for ::1 at 2024-12-06 00:00:59 -0300
+Processing by CoinsController#index as HTML
+  Rendering coins/index.html.erb within layouts/application
+  Rendered coins/index.html.erb within layouts/application (10.6ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `human_attribute_nale' for #<Class:0x00007ff944319d78>
+Did you mean?  human_attribute_name):
+     6:   <thead>
+     7:     <tr>
+     8:       <%# As traduções são buscadas em config/locales/pt-BR_models.yml %>
+     9:       <th><%= Coin.human_attribute_nale(:description) %></th>
+    10:       <th><%= Coin.human_attribute_nale(:acronym) %></th>
+    11:       <th><%= Coin.human_attribute_nale(:url_image) %></th>
+    12:       <th colspan="3"></th>
+  
+app/views/coins/index.html.erb:9:in `_app_views_coins_index_html_erb__3924157086602074200_26240'
+Started GET "/coins" for ::1 at 2024-12-06 00:01:06 -0300
+Processing by CoinsController#index as HTML
+  Rendering coins/index.html.erb within layouts/application
+  Rendered coins/index.html.erb within layouts/application (11.9ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `human_attribute_nale' for #<Class:0x00007ff944319d78>
+Did you mean?  human_attribute_name):
+     6:   <thead>
+     7:     <tr>
+     8:       <%# As traduções são buscadas em config/locales/pt-BR_models.yml %>
+     9:       <th><%= Coin.human_attribute_nale(:description) %></th>
+    10:       <th><%= Coin.human_attribute_nale(:acronym) %></th>
+    11:       <th><%= Coin.human_attribute_nale(:url_image) %></th>
+    12:       <th colspan="3"></th>
+  
+app/views/coins/index.html.erb:9:in `_app_views_coins_index_html_erb__3924157086602074200_26780'
+Started GET "/coins" for ::1 at 2024-12-06 00:01:06 -0300
+Processing by CoinsController#index as HTML
+  Rendering coins/index.html.erb within layouts/application
+  Rendered coins/index.html.erb within layouts/application (10.1ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `human_attribute_nale' for #<Class:0x00007ff944319d78>
+Did you mean?  human_attribute_name):
+     6:   <thead>
+     7:     <tr>
+     8:       <%# As traduções são buscadas em config/locales/pt-BR_models.yml %>
+     9:       <th><%= Coin.human_attribute_nale(:description) %></th>
+    10:       <th><%= Coin.human_attribute_nale(:acronym) %></th>
+    11:       <th><%= Coin.human_attribute_nale(:url_image) %></th>
+    12:       <th colspan="3"></th>
+  
+app/views/coins/index.html.erb:9:in `_app_views_coins_index_html_erb__3924157086602074200_27300'
+Started GET "/coins" for ::1 at 2024-12-06 00:01:07 -0300
+Processing by CoinsController#index as HTML
+  Rendering coins/index.html.erb within layouts/application
+  Rendered coins/index.html.erb within layouts/application (9.5ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `human_attribute_nale' for #<Class:0x00007ff944319d78>
+Did you mean?  human_attribute_name):
+     6:   <thead>
+     7:     <tr>
+     8:       <%# As traduções são buscadas em config/locales/pt-BR_models.yml %>
+     9:       <th><%= Coin.human_attribute_nale(:description) %></th>
+    10:       <th><%= Coin.human_attribute_nale(:acronym) %></th>
+    11:       <th><%= Coin.human_attribute_nale(:url_image) %></th>
+    12:       <th colspan="3"></th>
+  
+app/views/coins/index.html.erb:9:in `_app_views_coins_index_html_erb__3924157086602074200_27820'
+Started GET "/coins" for ::1 at 2024-12-06 00:01:07 -0300
+Processing by CoinsController#index as HTML
+  Rendering coins/index.html.erb within layouts/application
+  Rendered coins/index.html.erb within layouts/application (9.9ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `human_attribute_nale' for #<Class:0x00007ff944319d78>
+Did you mean?  human_attribute_name):
+     6:   <thead>
+     7:     <tr>
+     8:       <%# As traduções são buscadas em config/locales/pt-BR_models.yml %>
+     9:       <th><%= Coin.human_attribute_nale(:description) %></th>
+    10:       <th><%= Coin.human_attribute_nale(:acronym) %></th>
+    11:       <th><%= Coin.human_attribute_nale(:url_image) %></th>
+    12:       <th colspan="3"></th>
+  
+app/views/coins/index.html.erb:9:in `_app_views_coins_index_html_erb__3924157086602074200_28340'
+Started GET "/coins" for ::1 at 2024-12-06 00:01:08 -0300
+Processing by CoinsController#index as HTML
+  Rendering coins/index.html.erb within layouts/application
+  Rendered coins/index.html.erb within layouts/application (10.5ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `human_attribute_nale' for #<Class:0x00007ff944319d78>
+Did you mean?  human_attribute_name):
+     6:   <thead>
+     7:     <tr>
+     8:       <%# As traduções são buscadas em config/locales/pt-BR_models.yml %>
+     9:       <th><%= Coin.human_attribute_nale(:description) %></th>
+    10:       <th><%= Coin.human_attribute_nale(:acronym) %></th>
+    11:       <th><%= Coin.human_attribute_nale(:url_image) %></th>
+    12:       <th colspan="3"></th>
+  
+app/views/coins/index.html.erb:9:in `_app_views_coins_index_html_erb__3924157086602074200_28860'
+Started GET "/coins" for ::1 at 2024-12-06 00:01:22 -0300
+Processing by CoinsController#index as HTML
+  Rendering coins/index.html.erb within layouts/application
+  Rendered coins/index.html.erb within layouts/application (9.9ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `human_attribute_nale' for #<Class:0x00007ff944319d78>
+Did you mean?  human_attribute_name):
+     6:   <thead>
+     7:     <tr>
+     8:       <%# As traduções são buscadas em config/locales/pt-BR_models.yml %>
+     9:       <th><%= Coin.human_attribute_nale(:description) %></th>
+    10:       <th><%= Coin.human_attribute_nale(:acronym) %></th>
+    11:       <th><%= Coin.human_attribute_nale(:url_image) %></th>
+    12:       <th colspan="3"></th>
+  
+app/views/coins/index.html.erb:9:in `_app_views_coins_index_html_erb__3924157086602074200_29380'
+Started GET "/coins" for ::1 at 2024-12-06 00:01:42 -0300
+Processing by CoinsController#index as HTML
+  Rendering coins/index.html.erb within layouts/application
+  [1m[36mCoin Load (0.1ms)[0m  [1m[34mSELECT "coins".* FROM "coins"[0m
+  ↳ app/views/coins/index.html.erb:18
+  Rendered coins/index.html.erb within layouts/application (25.8ms)
+Completed 200 OK in 40ms (Views: 38.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/coins" for ::1 at 2024-12-06 00:02:58 -0300
+Processing by CoinsController#index as HTML
+  Rendering coins/index.html.erb within layouts/application
+  [1m[36mCoin Load (0.1ms)[0m  [1m[34mSELECT "coins".* FROM "coins"[0m
+  ↳ app/views/coins/index.html.erb:18
+  Rendered coins/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 17ms (Views: 16.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/coins" for ::1 at 2024-12-06 00:02:58 -0300
+Processing by CoinsController#index as HTML
+  Rendering coins/index.html.erb within layouts/application
+  [1m[36mCoin Load (0.1ms)[0m  [1m[34mSELECT "coins".* FROM "coins"[0m
+  ↳ app/views/coins/index.html.erb:18
+  Rendered coins/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 14ms (Views: 13.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2024-12-06 00:03:41 -0300
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/_menu.html.erb (0.3ms)
+  Rendered welcome/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 14ms (Views: 13.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mining_types" for ::1 at 2024-12-06 00:03:42 -0300
+Processing by MiningTypesController#index as HTML
+  Rendering mining_types/index.html.erb within layouts/application
+  [1m[36mMiningType Load (0.1ms)[0m  [1m[34mSELECT "mining_types".* FROM "mining_types"[0m
+  ↳ app/views/mining_types/index.html.erb:15
+  Rendered mining_types/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 19ms (Views: 16.9ms | ActiveRecord: 0.4ms)
+
+

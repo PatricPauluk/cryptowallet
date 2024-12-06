@@ -1,0 +1,27 @@
+"pt-BR":
+  activerecord:
+    models:
+      coin:
+        one: Moeda # Singular
+        other: Moedas # Plural
+      mining_type: 
+        one: Tipo de Mineração # Singular
+        other: Tipos de Mineração # Plural
+    attributes:
+      coin:
+        id: ID
+        description: Descrição
+        acronym: Sigla
+        url_image: URL da Imagem
+        mining_type: Tipo de Mineração
+        mining_type_id: ID do Tipo de Mineração
+        updated_at: Atualizado em
+        created_at: Criado em
+      mining_type:
+        id: ID
+        description: Descrição
+        acronym: Sigla
+        updated_at: Atualizado em
+        created_at: Criado em
+
+# Traduz os campos (principalmente labels) através dos models
