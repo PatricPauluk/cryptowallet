@@ -7,6 +7,10 @@
     Testes I18n.t(): <%= t('hello') %> </p>
 <%# O método pode ser chamado dessa forma ao invés de: I18n.t('hello') %>
 
+<%# Cookie e session declarados em app/controllers/welcome_controller.rb %>
+<p>Acessando cookie: <%= cookies[:curso] %></p>
+<p>Acessando session: <%= session[:curso] %></p>
+
 <%# Meu nome esta sendo chamado de uma variável de instância direto do controller. %>
 <p>Meu nome é <%= @nome %> e seja bem vindo ao Cryptowallet.</p>
 <%# O helper criado abaixo é o mesmo que => Date.today.strftime("%d/%m/%Y") %>
