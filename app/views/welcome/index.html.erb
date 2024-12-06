@@ -1,5 +1,14 @@
 <h1>Seja bem vindo!</h1>
 
+<p>
+    <%# Muda o idioma da página através de um parâmetro, declarados em app/controllers/application_controller.rb %>
+    <%= link_to 'PT-BR', root_path(locale: 'pt-BR') %>
+    <%= link_to 'ENG', root_path(locale: 'en') %>
+
+    <%# link_to 'PT-BR', '/?locale=pt-BR' %>
+    <%# link_to 'ENG', '/?locale=en' %>
+</p>
+
 <%# locale é um helper %>
 <p>Configurado o I18n. O idioma usado nesta aplicação é: <strong><%= t('actual_locale') %></strong></p>
 <p> O método para buscar tradução é <strong>I18n.t()</strong>, as chaves ficam em config/locales.<br>
@@ -13,6 +22,7 @@
 
 <%# Meu nome esta sendo chamado de uma variável de instância direto do controller. %>
 <p>Meu nome é <%= @nome %> e seja bem vindo ao Cryptowallet.</p>
+
 <%# O helper criado abaixo é o mesmo que => Date.today.strftime("%d/%m/%Y") %>
 <%# data_br(Date.today) %>
 <%# Após configurar o I18n na aplicação não vamos mais utilizar este helper. %>
