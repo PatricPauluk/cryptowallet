@@ -5,12 +5,42 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <%# Inicialmente em um projeto, os assets de Javascript e CSS são todos carregados cada vez que uma página é acessada,
+    o que é desnecessário. Para termos um controle maior do que precisamos carregar por página e isolar o que não precisamos,
+    foi removido a linha require_tree dos seguintes arquivos: app/assets/javascripts/application.js
+                                                              app/assets/stylesheets/application.css
+    
+    Pois esta linha (que contém require_tree) carregava todos os arquivos que se encontram nessa mesma pasta, ou seja,
+    carregava todos os arquivos das pastas: app/assets/javascripts/
+                                            app/assets/stylesheets/
+
+    A princípio, remover essa linha vai deixar o projeto "feio" já que removemos o esqueleto e estilo da página.
+    Agora, para seguirmos com o plano de carregar apenas o necessário, utilizamos o valor em parâmetro do controller, como abaixo: %>
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'scaffolds', media: 'all', 'data-turbolinks-track': 'reload' %>        <%# Melhora a aparência da página após as alterações com o scaffolds %>
+    <%= stylesheet_link_tag    params[:controller], media: 'all', 'data-turbolinks-track': 'reload' %>  <%# Carrega os assets de CSS %>
+
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag params[:controller], 'data-turbolinks-track': 'reload' %>                <%# Carrega os assets de JS %>
+
+    <%# params[:controller] consegue indicar por qual controller a requisição passou, então aproveitamos ele para isolar os assets.
+    Porém, apenas colocando o código acima não vai funcionar, vai causar o seguinte erro:
+    Sprockets::Rails::Helper::AssetNotPrecompiledError in Welcome#inde
+
+    Apenas os arquvos application.js e application.css eram capazes de ler os arquivos dentro da sua pasta, através do require_tree.
+    Para corrigirmos isso, devemos ir no arquivo: config/initializers/assets.rb e adicionar o asset a ser carregado.
+    Por exemplo, adicionar o código: Rails.application.config.assets.precompile += %w( welcome.css )
+
+    Como pode ver na pasta, devem ser inseridos tanto os arquivos .css como os .js
+    Após fazer as alterações, reiniciar o servidor. É para estar funcionando corretamente. %>
   </head>
 
   <body>
+    <h1>Cabeçalho Falso</h1>
     <%# yield é responsável por renderizar o conteúdo das views %>
     <%= yield %>
+    <h1>Rodapé Falso</h1>
+    <p>A requisição passou pelo controller: <%= params[:controller] %></p>
   </body>
 </html>
