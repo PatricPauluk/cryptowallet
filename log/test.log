@@ -1,0 +1,35 @@
+Started GET "/" for 127.0.0.1 at 2024-12-11 14:31:22 -0300
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/_menu.html.erb (0.3ms)
+  Rendered welcome/index.html.erb within layouts/application (64.1ms)
+Completed 200 OK in 239ms (Views: 236.0ms)
+Started GET "/assets/application-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css" for 127.0.0.1 at 2024-12-11 14:31:22 -0300
+Started GET "/assets/scaffolds-8aaddd52cc1ee2c7019b100b99bd9754fcc769e2d983c4882aca95d0b4088d43.css" for 127.0.0.1 at 2024-12-11 14:31:22 -0300
+Started GET "/assets/welcome-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css" for 127.0.0.1 at 2024-12-11 14:31:22 -0300
+Started GET "/assets/application-b5feffc7f1f9b8f3fc8a923b85c341876d0198e33f351e2e0b04fd402538c294.js" for 127.0.0.1 at 2024-12-11 14:31:22 -0300
+Started GET "/assets/welcome-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js" for 127.0.0.1 at 2024-12-11 14:31:22 -0300
+Started GET "/coins" for 127.0.0.1 at 2024-12-11 14:31:26 -0300
+Processing by CoinsController#index as HTML
+  Rendering coins/index.html.erb within layouts/application
+  [1m[36mCoin Load (0.2ms)[0m  [1m[34mSELECT "coins".* FROM "coins"[0m
+  Rendered coins/index.html.erb within layouts/application (21.0ms)
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 10.8ms)
+Started GET "/" for 127.0.0.1 at 2024-12-11 14:31:30 -0300
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/_menu.html.erb (0.1ms)
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+Started GET "/mining_types" for 127.0.0.1 at 2024-12-11 14:31:31 -0300
+Processing by MiningTypesController#index as HTML
+  Rendering mining_types/index.html.erb within layouts/application
+  [1m[36mMiningType Load (0.2ms)[0m  [1m[34mSELECT "mining_types".* FROM "mining_types"[0m
+  Rendered mining_types/index.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms)
+Started GET "/" for 127.0.0.1 at 2024-12-11 14:31:33 -0300
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/_menu.html.erb (0.1ms)
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms)

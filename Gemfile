@@ -57,9 +57,17 @@ end
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
-  gem 'selenium-webdriver'
+  # gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
-  gem 'chromedriver-helper'
+  # gem 'chromedriver-helper'
+
+  # Eu comentei e desinstalei as gems 'selenium-webdriver' e 'chromedriver-helper' acima, e utilizei a gem 'webdriver' no lugar.
+  # Desinstalei com o comando: 'gem uninstall selenium-webdriver chromedriver-helper'.
+  gem 'webdriver' # Gerencia automaticamente o download e a instalação do Chromedriver correto.
+  # Por algum motivo, tive um erro abaixo a usar o comando 'rails s -e test' no terminal:
+  # /home/patrick/.asdf/installs/ruby/2.7.8/lib/ruby/gems/2.7.0/gems/chromedriver-helper-1.2.1/lib/chromedriver-helper.rb:4 in `<main>':
+  # undefined method `driver_path=' for Selenium::WebDriver::Chrome:Module (NoMethodError)
+  # Resolvi o problema adicionando a gem 'webdriver'e rodando 'bundle install' no terminal.
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

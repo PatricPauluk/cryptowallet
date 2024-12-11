@@ -1,0 +1,18 @@
+I, [2024-12-11T14:31:59.966000 #52273]  INFO -- : [a0c922ef-e058-4321-97e6-fc08d81d5703] Started GET "/" for 127.0.0.1 at 2024-12-11 14:31:59 -0300
+I, [2024-12-11T14:31:59.966597 #52273]  INFO -- : [a0c922ef-e058-4321-97e6-fc08d81d5703] Processing by WelcomeController#index as HTML
+I, [2024-12-11T14:31:59.970099 #52273]  INFO -- : [a0c922ef-e058-4321-97e6-fc08d81d5703]   Rendering welcome/index.html.erb within layouts/application
+I, [2024-12-11T14:31:59.993897 #52273]  INFO -- : [a0c922ef-e058-4321-97e6-fc08d81d5703]   Rendered welcome/_menu.html.erb (0.3ms)
+I, [2024-12-11T14:31:59.993999 #52273]  INFO -- : [a0c922ef-e058-4321-97e6-fc08d81d5703]   Rendered welcome/index.html.erb within layouts/application (23.8ms)
+I, [2024-12-11T14:31:59.994879 #52273]  INFO -- : [a0c922ef-e058-4321-97e6-fc08d81d5703] Completed 500 Internal Server Error in 28ms
+F, [2024-12-11T14:31:59.995398 #52273] FATAL -- : [a0c922ef-e058-4321-97e6-fc08d81d5703]   
+F, [2024-12-11T14:31:59.995441 #52273] FATAL -- : [a0c922ef-e058-4321-97e6-fc08d81d5703] ActionView::Template::Error (The asset "application.css" is not present in the asset pipeline.
+):
+F, [2024-12-11T14:31:59.995510 #52273] FATAL -- : [a0c922ef-e058-4321-97e6-fc08d81d5703]     17:     A princípio, remover essa linha vai deixar o projeto "feio" já que removemos o esqueleto e estilo da página.
+[a0c922ef-e058-4321-97e6-fc08d81d5703]     18:     Agora, para seguirmos com o plano de carregar apenas o necessário, utilizamos o valor em parâmetro do controller, como abaixo: %>
+[a0c922ef-e058-4321-97e6-fc08d81d5703]     19: 
+[a0c922ef-e058-4321-97e6-fc08d81d5703]     20:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+[a0c922ef-e058-4321-97e6-fc08d81d5703]     21:     <%= stylesheet_link_tag    'scaffolds', media: 'all', 'data-turbolinks-track': 'reload' %>        <%# Melhora a aparência da página após as alterações com o scaffolds %>
+[a0c922ef-e058-4321-97e6-fc08d81d5703]     22:     <%= stylesheet_link_tag    params[:controller], media: 'all', 'data-turbolinks-track': 'reload' %>  <%# Carrega os assets de CSS %>
+[a0c922ef-e058-4321-97e6-fc08d81d5703]     23: 
+F, [2024-12-11T14:31:59.995544 #52273] FATAL -- : [a0c922ef-e058-4321-97e6-fc08d81d5703]   
+F, [2024-12-11T14:31:59.995569 #52273] FATAL -- : [a0c922ef-e058-4321-97e6-fc08d81d5703] app/views/layouts/application.html.erb:20:in `_app_views_layouts_application_html_erb___1577781674881005989_13720'
