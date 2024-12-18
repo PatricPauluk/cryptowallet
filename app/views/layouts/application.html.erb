@@ -18,15 +18,20 @@
     Agora, para seguirmos com o plano de carregar apenas o necessário, utilizamos o valor em parâmetro do controller, como abaixo: %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_link_tag    'scaffolds', media: 'all', 'data-turbolinks-track': 'reload' %>        <%# Melhora a aparência da página após as alterações com o scaffolds %>
-    <%= stylesheet_link_tag    params[:controller], media: 'all', 'data-turbolinks-track': 'reload' %>  <%# Carrega os assets de CSS %>
+    <%= stylesheet_link_tag    'scaffolds', media: 'all', 'data-turbolinks-track': 'reload' %> <%# Melhora a aparência da página após carregar o scaffolds %>
+    <%= stylesheet_link_tag    params[:controller], media: 'all', 'data-turbolinks-track': 'reload' %> <%# Carrega os assets de CSS %>
 
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag params[:controller], 'data-turbolinks-track': 'reload' %>                <%# Carrega os assets de JS %>
+    <%= javascript_include_tag params[:controller], 'data-turbolinks-track': 'reload' %> <%# Carrega os assets de JS %>
+
+    <%# Foi apagado os arquivos notify.js e jquery.js que estavam em vendor/assets/javascripts, então o código abaixo não funciona mais.
+    A propósta é instalar o Rails Assets, que transforma a biblioteca Javascript em uma GEM.
+    javascript_include_tag 'jquery', 'data-turbolinks-track': 'reload' %> <%# busca de vendor/assets/javascripts | não mais escrito dessa forma
+    javascript_include_tag 'notify', 'data-turbolinks-track': 'reload' %> <%# busca de vendor/assets/javascripts | não mais escrito dessa forma %>
 
     <%# params[:controller] consegue indicar por qual controller a requisição passou, então aproveitamos ele para isolar os assets.
     Porém, apenas colocando o código acima não vai funcionar, vai causar o seguinte erro:
-    Sprockets::Rails::Helper::AssetNotPrecompiledError in Welcome#inde
+    Sprockets::Rails::Helper::AssetNotPrecompiledError in Welcome#index
 
     Apenas os arquvos application.js e application.css eram capazes de ler os arquivos dentro da sua pasta, através do require_tree.
     Para corrigirmos isso, devemos ir no arquivo: config/initializers/assets.rb e adicionar o asset a ser carregado.
@@ -40,7 +45,8 @@
     <h1>Cabeçalho Falso</h1>
     <%# yield é responsável por renderizar o conteúdo das views %>
     <%= yield %>
-    <h1>Rodapé Falso</h1>
     <p>A requisição passou pelo controller: <%= params[:controller] %></p>
+    <h1>Rodapé Falso</h1>
+    <script>$.notify("Notify.js funcionando junto de jQuery.js", "success")</script>
   </body>
 </html>

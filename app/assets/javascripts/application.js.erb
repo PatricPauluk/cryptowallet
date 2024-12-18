@@ -2,7 +2,7 @@
 // listed below.
 //
 // A extensão do arquivo.js virou .js.erb
-// Agora pode ser misturado código Ruby com JS.
+// Agora pode ser mesclado código Ruby com JS.
 //
 // Any JavaScript/Coffee file within this directory, lib/assets/javascripts, or any plugin's
 // vendor/assets/javascripts directory can be referenced here using a relative path.
@@ -16,6 +16,18 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
+//= require jquery
+//= require notifyjs
+
+<%# 
+//= require jquery
+//= require notify
+
+Forma antiga NÃO UTILIZADA: jquery e notify são requisitados de vendor/assets/javascripts
+                            Declarados em: app/views/layouts/application.html.erb
+                            Os requires foram comentados (apesar de funcionar normalmente), pois foram escritos dessa outra forma.
+
+Se esse comentário estivesse antes dos requires declarados, eles não funcionariam. %>
 
 <% msg = Time.now.hour < 12 ? "Bom dia!" : "Olá!" %>
 alert("<%= msg %>");
