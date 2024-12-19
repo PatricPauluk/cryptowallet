@@ -18,7 +18,7 @@
     Agora, para seguirmos com o plano de carregar apenas o necessário, utilizamos o valor em parâmetro do controller, como abaixo: %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_link_tag    'scaffolds', media: 'all', 'data-turbolinks-track': 'reload' %> <%# Melhora a aparência da página após carregar o scaffolds %>
+    <%# stylesheet_link_tag    'scaffolds', media: 'all', 'data-turbolinks-track': 'reload' %> <%# Melhora a aparência da página após carregar o scaffolds, não é necessário se utiliza bootstrap %>
     <%= stylesheet_link_tag    params[:controller], media: 'all', 'data-turbolinks-track': 'reload' %> <%# Carrega os assets de CSS %>
 
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -43,11 +43,48 @@
   </head>
 
   <body>
-    <h1>Cabeçalho Falso</h1>
-    <%# yield é responsável por renderizar o conteúdo das views %>
-    <%= yield %>
-    <p>A requisição passou pelo controller: <%= params[:controller] %></p>
-    <h1>Rodapé Falso</h1>
-    <script>$.notify("Notify.js funcionando junto de jQuery.js", "success")</script>
+    <%# Header %>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/inicio">Cryptowallet</a>
+        <ul class="nav justify-content-end">
+          <li class="nav-item">
+            <%# As classes são transformadas em hashes para funcionar com código Ruby. %>
+            <%= link_to 'Português (Brasil)', root_path(locale: 'pt-BR'), class:"nav-link active" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Inglês', root_path(locale: 'en'), class:"nav-link active" %>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <%# yield é responsável por renderizar o conteúdo das views %>
+      <%= yield %>
+      <p>A requisição passou pelo controller: <%= params[:controller] %></p>
+    </div>
+
+    <%# Rodapé %>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+          <span class="navbar-text">
+            Curso de Ruby on Rails, primeiro projeto. Todos os direitos reservados.
+          </span>
+      </div>
+    </nav>
+
+    <script>
+      // Teste do Notify.js
+      $.notify("Notify.js funcionando junto de jQuery.js", "success")
+
+      // Código que "conserta" os botões ao clicar, expandindo a área do link
+      document.querySelectorAll('.btn').forEach(btn => {
+        btn.addEventListener('click', (event) => {
+          // Redirecionar para o link
+          window.location.href = btn.querySelector('a').href;
+        });
+      });
+    </script>
   </body>
 </html>

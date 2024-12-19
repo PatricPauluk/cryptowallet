@@ -1,16 +1,11 @@
-<ul>
-    <li>
-        <%#
-        O código abaixo é o mesmo que:
-        <a href="/coins">Cadastro de Moedas </a>
-        Em Rails é sempre recomendado usar código Ruby ao invés de HTML. 
-        
-        A rota coins_path (o mesmo que /coins) foi pega na url:
-        http://localhost:3000/rails/info/routes
-        %>
-        <%= link_to "Cadastro de Moedas", coins_path %>
-    </li>
-    <li>
-        <%= link_to "Cadastro de Tipos de Mineração", mining_types_path %>
-    </li>
-</ul>
+<%# A rota coins_path (o mesmo que /coins) foi pega na url:
+http://localhost:3000/rails/info/routes
+
+Anteriormente, o menu aqui ela uma lista HTML sem formatação, antes do Bootstrap. %>
+
+<%# O código abaixo é o mesmo que:
+<a href="/coins">Cadastro de Moedas </a>
+Em Rails é sempre recomendado usar código Ruby ao invés de HTML. 
+Vou deixar aqui duas formas de fazer um botão, uma usando apenas Ruby, e outra usando Ruby com HTML. %>
+<button class="btn btn-primary btn-lg" type="button"><%= link_to "Cadastro de Moedas", coins_path %></button>
+<%= link_to "Cadastro de Tipos de Mineração", mining_types_path, class:"btn btn-primary btn-lg", role:"button" %> <%# Forma RECOMENDADA %>

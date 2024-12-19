@@ -13,3 +13,8 @@
  *= require_self
  *= require bootstrap/dist/css/bootstrap
  */
+
+ .btn a {
+    color: inherit; /* Herda a cor do botão */
+    text-decoration: none;
+  }
