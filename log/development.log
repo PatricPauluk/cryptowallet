@@ -7101,3 +7101,91 @@ Processing by WelcomeController#index as HTML
 Completed 200 OK in 328ms (Views: 325.7ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2024-12-18 22:06:35 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/patric/.asdf/installs/ruby/2.7.8/lib/ruby/gems/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/_menu.html.erb (0.5ms)
+  Rendered welcome/index.html.erb within layouts/application (102.9ms)
+Completed 500 Internal Server Error in 247ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'notify-js-legacy' with type 'application/javascript'
+Checked in these paths: 
+  /home/patric/cryptowallet/app/assets/config
+  /home/patric/cryptowallet/app/assets/images
+  /home/patric/cryptowallet/app/assets/javascripts
+  /home/patric/cryptowallet/app/assets/stylesheets
+  /home/patric/cryptowallet/lib/assets/images
+  /home/patric/.asdf/installs/ruby/2.7.8/lib/ruby/gems/2.7.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/patric/.asdf/installs/ruby/2.7.8/lib/ruby/gems/2.7.0/gems/actioncable-5.2.8.1/lib/assets/compiled
+  /home/patric/.asdf/installs/ruby/2.7.8/lib/ruby/gems/2.7.0/gems/activestorage-5.2.8.1/app/assets/javascripts
+  /home/patric/.asdf/installs/ruby/2.7.8/lib/ruby/gems/2.7.0/gems/actionview-5.2.8.1/lib/assets/compiled
+  /home/patric/.asdf/installs/ruby/2.7.8/lib/ruby/gems/2.7.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /home/patric/cryptowallet/node_modules):
+    17:     A princípio, remover essa linha vai deixar o projeto "feio" já que removemos o esqueleto e estilo da página.
+    18:     Agora, para seguirmos com o plano de carregar apenas o necessário, utilizamos o valor em parâmetro do controller, como abaixo: %>
+    19: 
+    20:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    21:     <%= stylesheet_link_tag    'scaffolds', media: 'all', 'data-turbolinks-track': 'reload' %> <%# Melhora a aparência da página após carregar o scaffolds %>
+    22:     <%= stylesheet_link_tag    params[:controller], media: 'all', 'data-turbolinks-track': 'reload' %> <%# Carrega os assets de CSS %>
+    23: 
+  
+app/assets/javascripts/application.js.erb:20
+app/views/layouts/application.html.erb:20:in `_app_views_layouts_application_html_erb__1148288673807500075_14020'
+Started GET "/" for ::1 at 2024-12-18 22:08:11 -0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/patric/.asdf/installs/ruby/2.7.8/lib/ruby/gems/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/_menu.html.erb (1.4ms)
+  Rendered welcome/index.html.erb within layouts/application (361.3ms)
+Completed 500 Internal Server Error in 551ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'notify' with type 'application/javascript'
+Checked in these paths: 
+  /home/patric/cryptowallet/app/assets/config
+  /home/patric/cryptowallet/app/assets/images
+  /home/patric/cryptowallet/app/assets/javascripts
+  /home/patric/cryptowallet/app/assets/stylesheets
+  /home/patric/cryptowallet/lib/assets/images
+  /home/patric/.asdf/installs/ruby/2.7.8/lib/ruby/gems/2.7.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/patric/.asdf/installs/ruby/2.7.8/lib/ruby/gems/2.7.0/gems/actioncable-5.2.8.1/lib/assets/compiled
+  /home/patric/.asdf/installs/ruby/2.7.8/lib/ruby/gems/2.7.0/gems/activestorage-5.2.8.1/app/assets/javascripts
+  /home/patric/.asdf/installs/ruby/2.7.8/lib/ruby/gems/2.7.0/gems/actionview-5.2.8.1/lib/assets/compiled
+  /home/patric/.asdf/installs/ruby/2.7.8/lib/ruby/gems/2.7.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /home/patric/cryptowallet/node_modules):
+    17:     A princípio, remover essa linha vai deixar o projeto "feio" já que removemos o esqueleto e estilo da página.
+    18:     Agora, para seguirmos com o plano de carregar apenas o necessário, utilizamos o valor em parâmetro do controller, como abaixo: %>
+    19: 
+    20:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    21:     <%= stylesheet_link_tag    'scaffolds', media: 'all', 'data-turbolinks-track': 'reload' %> <%# Melhora a aparência da página após carregar o scaffolds %>
+    22:     <%= stylesheet_link_tag    params[:controller], media: 'all', 'data-turbolinks-track': 'reload' %> <%# Carrega os assets de CSS %>
+    23: 
+  
+app/assets/javascripts/application.js.erb:20
+app/views/layouts/application.html.erb:20:in `_app_views_layouts_application_html_erb___20660656119087929_14020'
+Started GET "/" for ::1 at 2024-12-18 22:09:05 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/patric/.asdf/installs/ruby/2.7.8/lib/ruby/gems/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/_menu.html.erb (0.4ms)
+  Rendered welcome/index.html.erb within layouts/application (29.8ms)
+Completed 200 OK in 297ms (Views: 292.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2024-12-18 22:12:19 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/patric/.asdf/installs/ruby/2.7.8/lib/ruby/gems/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/_menu.html.erb (0.4ms)
+  Rendered welcome/index.html.erb within layouts/application (91.4ms)
+Completed 200 OK in 224ms (Views: 219.7ms | ActiveRecord: 0.0ms)
+
+

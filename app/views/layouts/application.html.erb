@@ -25,7 +25,8 @@
     <%= javascript_include_tag params[:controller], 'data-turbolinks-track': 'reload' %> <%# Carrega os assets de JS %>
 
     <%# Foi apagado os arquivos notify.js e jquery.js que estavam em vendor/assets/javascripts, então o código abaixo não funciona mais.
-    A propósta é instalar o Rails Assets, que transforma a biblioteca Javascript em uma GEM.
+    Foi utilizado o Rails Assets para as instalações, que transforma a biblioteca Javascript em uma GEM, porém foi removido por ser obsoleto.
+    A forma indicada para trabalhar com o Javascript seria utilizando o yarn.
     javascript_include_tag 'jquery', 'data-turbolinks-track': 'reload' %> <%# busca de vendor/assets/javascripts | não mais escrito dessa forma
     javascript_include_tag 'notify', 'data-turbolinks-track': 'reload' %> <%# busca de vendor/assets/javascripts | não mais escrito dessa forma %>
 

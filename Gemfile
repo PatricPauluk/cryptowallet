@@ -40,10 +40,11 @@ gem 'pry-rails' # Exibe os dados do rails console de forma mais legível
 gem "tty-spinner" # Adiciona um spinner quando tiver carregando algo no terminal
 gem 'rails-i18n', '~> 5.1' # Responsavel pela localização PT-BR da aplicação, configurado em: config/initializers/locale.rb
 
-source 'https://rails-assets.org' do
-  gem 'rails-assets-jquery'
-  gem 'rails-assets-notifyjs'
-end
+# Instalação do jquery e notifyjs usando rails-assets (forma obsoleta, o recomendado é utilizar yarn):
+# source 'https://rails-assets.org' do
+#   gem 'rails-assets-jquery'
+#   gem 'rails-assets-notifyjs'
+# end
 # O código acima faz o mesmo que o abaixo, porém de forma mais eficaz:
 # gem 'rails-assets-jquery', '3.3.1', source: 'https://rails-assets.org' # Instala o jquery de https://rails-assets.org/#/components/jquery?version=3.3.1
 # gem 'rails-assets-notifyjs', source: 'https://rails-assets.org' # Instala o notify.js de https://rails-assets.org/#/components/notifyjs
