@@ -1,9 +1,30 @@
 "pt-BR":
-  actual_locale: "Português do Brasil"
+  current_locale: "Português do Brasil"
+  welcome: "Bem vindo!"
   hello: "Olá mundo!"
+  about:
+    i18n_lang: "Configurado o I18n. O idioma usado nesta aplicação é:"
+    mynameis: "Meu nome é"
+    cryptowallet: "e bem vindo ao Cryptowallet! Seu aplicativo para gerenciar cryptomoedas."
+    today: "Dia de hoje:"
+    confirm: "Você tem certeza?"
+  retrieving:
+    cookie: "Acessando cookie:"
+    session: "Acessando session:"
   links:
     edit: "Editar"
     show: "Mostrar"
     destroy: "Apagar"
+    new: "Novo"
+    back: "Voltar"
+  new:
+    coin: "Nova Moeda"
+    mining_type: "Novo Tipo de Mineração"
+  editing:
+    coin: "Editando Moeda"
+    mining_type: "Editando Tipo de Mineração"
+  showing:
+    coin: "Mostrando Moeda"
+    mining_type: "Mostrando Tipo de Mineração"
 
 # Como pode ver em outro arquivos em locales, as chaves podem ou não ter áspas

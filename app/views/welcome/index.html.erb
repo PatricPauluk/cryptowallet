@@ -1,35 +1,23 @@
 <div class="p-5 mb-4 bg-body-tertiary rounded-3"> 
     <div class="container-fluid py-5">
-    <h1 class="display-5 fw-bold">Seja bem vindo</h1>
-
-    <%# Muda o idioma da página através de um parâmetro, declarados em app/controllers/application_controller.rb %>
-    <p class="col-md-8 fs-4">
-        Selecione o Idioma:
-        <%= link_to 'PT-BR', root_path(locale: 'pt-BR') %> |
-        <%= link_to 'ENG', root_path(locale: 'en') %>
-        <%# link_to 'PT-BR', '/?locale=pt-BR' %>
-        <%# link_to 'ENG', '/?locale=en' %>
-    </p>
+    <h1 class="display-5 fw-bold"><%= t('welcome') %></h1>
 
     <p class="col-md-8 fs-4">
-        Configurado o I18n. O idioma usado nesta aplicação é: <strong><%= t('actual_locale') %></strong>
+        <%= t('about.i18n_lang') %> <strong><%= t('current_locale') %></strong>
     </p>
-
-    <p class="col-md-8 fs-4">
-        O método para buscar tradução é <strong>I18n.t()</strong>, as chaves ficam em config/locales.<br>
-        O método para localização (como data e hora) é <strong>I18n.l()</strong>.<br><br>
-        Testes I18n.t(): <%= t('hello') %> <%# O método pode ser chamado dessa forma ao invés de: I18n.t('hello') %>
-    </p>
+    <%# O método para buscar tradução é <strong>I18n.t()</strong>, as chaves ficam em config/locales.<br>
+    O método para localização (como data e hora) é <strong>I18n.l()</strong>.<br><br>
+    Testes I18n.t(): <%= t('hello') %> <%# O método pode ser chamado dessa forma ao invés de: I18n.t('hello') %>
 
     <%# Cookie e session declarados em app/controllers/welcome_controller.rb %>
     <p class="col-md-8 fs-4">
-        Acessando cookie: <%= cookies[:curso] %><br>
-        Acessando session: <%= session[:curso] %>
+        <%= t('retrieving.cookie') %> <%= cookies[:curso] %><br>
+        <%= t('retrieving.session') %> <%= session[:curso] %>
     </p>
 
     <%# Meu nome esta sendo chamado de uma variável de instância direto do controller. %>
     <p class="col-md-8 fs-4">
-        Meu nome é <%= @nome %> e seja bem vindo ao Cryptowallet.
+        <%= t('about.mynameis') %> <strong><%= @nome %></strong> <%= t('about.cryptowallet') %>
     </p>
 
     <%# O helper criado abaixo é o mesmo que => Date.today.strftime("%d/%m/%Y") %>
@@ -38,7 +26,7 @@
 
     <%# l(Date.today) é o mesmo que I18n.l(Date.today) %>
     <p class="col-md-8 fs-4">
-        Dia de hoje: <%= l(Date.today) %>
+        <%= t('about.today') %> <%= l(Date.today) %>
     </p>
     
     <%# Partials começam com _

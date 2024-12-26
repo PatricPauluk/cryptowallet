@@ -1,14 +1,31 @@
 <p id="notice"><%= notice %></p>
+<h1><%= t('showing.mining_type') %></h1>
 
 <p>
-  <strong>Description:</strong>
-  <%= @mining_type.description %>
+  <strong><%= label_tag nil, @mining_type.class.human_attribute_name(:description) %></strong>
+  <%= text_field_tag nil, @mining_type.description, class:"form-control", disabled:true %>
 </p>
 
 <p>
-  <strong>Acronym:</strong>
-  <%= @mining_type.acronym %>
+  <strong><%= label_tag nil, @mining_type.class.human_attribute_name(:acronym) %></strong>
+  <%= text_field_tag nil, @mining_type.acronym, class:"form-control", disabled:true %>
 </p>
 
-<%= link_to t('links.edit'), edit_mining_type_path(@mining_type) %> |
-<%= link_to 'Back', mining_types_path %>
+<%# 
+    Exemplo de label_tag:
+label_tag 'name', nil, class: 'small_label'
+# => <label for="name" class="small_label">Name</label> 
+
+    Exemplo de text_field_tag:
+text_field_tag 'query', 'Enter your search query here'
+# => <input id="query" name="query" type="text" value="Enter your search query here" />
+
+Para melhores informações:
+https://apidock.com/rails/v7.1.3.2/ActionView/Helpers/FormTagHelper/text_field_tag
+https://apidock.com/rails/v7.1.3.2/ActionView/Helpers/FormTagHelper/label_tag
+
+Basicamente, utilizando rails foram transformadas em tags HTML com Ruby, para aceitar as classes do Bootstrap.
+%>
+
+<%= link_to t('links.edit'), edit_mining_type_path(@mining_type), class:"btn btn-primary" %> |
+<%= link_to t('links.back'), mining_types_path, class:"btn btn-secondary" %>

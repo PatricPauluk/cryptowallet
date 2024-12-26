@@ -30,9 +30,30 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  actual_locale: "English (International)"
+  current_locale: "English (International)"
+  welcome: "Welcome!"
   hello: "Hello world"
+  about:
+    i18n_lang: "I18n configured. The language used in this application is:"
+    mynameis: "My name is"
+    cryptowallet: "and welcome to Cryptowallet! Your cryptocurrency management app."
+    today: "Today:"
+    confirm: "Are you sure?"
+  retrieving:
+    cookie: "Retrieving cookie:"
+    session: "Retrieving session:"
   links:
     edit: "Edit"
     show: "Show"
     destroy: "Destroy"
+    new: "New"
+    back: "Back"
+  new:
+    coin: "New Coin"
+    mining_type: "New Mining Type"
+  editing:
+    coin: "Editing Coin"
+    mining_type: "Editing Mining Type"
+  showing:
+    coin: "Showing Coin"
+    mining_type: "Showing Mining Type"

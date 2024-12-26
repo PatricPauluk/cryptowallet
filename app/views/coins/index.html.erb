@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Moedas</h1>
+<%# Caso tenha mais de uma moeda, o título aparece "Moedas" ao invés de "Moeda". %>
+<h1><%= Coin.model_name.human(count: @coins.count) %></h1>
 
 <table class="table table-hover">
   <thead>
@@ -29,7 +30,7 @@
         <%# Lembrando que todas as traduções estão em config/locales/pt-BR.yml %>
         <td><%= link_to t('links.show'), coin %></td>
         <td><%= link_to t('links.edit'), edit_coin_path(coin) %></td>
-        <td><%= link_to t('links.destroy'), coin, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
+        <td><%= link_to t('links.destroy'), coin, method: :delete, data: { confirm: t('confirm') } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -37,4 +38,4 @@
 
 <br>
 
-<%= link_to 'New Coin', new_coin_path %>
+<%= link_to t('new.coin'), new_coin_path, class:"btn btn-primary" %>
